@@ -1,5 +1,5 @@
 /* ========================================================================
- * Copyright (c) 2005-2016 The OPC Foundation, Inc. All rights reserved.
+ * Copyright (c) 2005-2017 The OPC Foundation, Inc. All rights reserved.
  *
  * OPC Foundation MIT License 1.00
  * 
@@ -122,10 +122,11 @@ namespace Opc.Ua.Sample.Controls
                     foreach (MonitoredItem monitoredItem in item.Subscription.MonitoredItems)
                     {
                         encoder.WriteNodeId("MonitoredItem", monitoredItem.ResolvedNodeId);
-                        item.NotificationMessage.Encode(encoder);
+                        ((DataChangeNotification)((NotificationData)item.NotificationMessage.NotificationData[0].Body)).MonitoredItems[0].Encode(encoder);
 
-                        var json = encoder.Close();
-                        var bytes = new UTF8Encoding(false).GetBytes(json);
+                        string json = encoder.Close();
+                        json = json.Replace("\\", "");
+                        byte[] bytes = new UTF8Encoding(false).GetBytes(json);
 
                         foreach (var publisher in m_publishers)
                         {

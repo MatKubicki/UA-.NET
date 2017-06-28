@@ -1,5 +1,5 @@
 /* ========================================================================
- * Copyright (c) 2005-2016 The OPC Foundation, Inc. All rights reserved.
+ * Copyright (c) 2005-2017 The OPC Foundation, Inc. All rights reserved.
  *
  * OPC Foundation MIT License 1.00
  * 
@@ -1121,7 +1121,7 @@ namespace Opc.Ua.Configuration
                 application.ApplicationName,
                 Utils.Format("CN={0}/DC={1}", application.ApplicationName, domains[0]),
                 domains,
-                1024,
+                2048,
                 300);
 
             CertificateIdentifier applicationCertificate = Opc.Ua.Security.SecuredApplication.FromCertificateIdentifier(application.ApplicationCertificate);

@@ -1,4 +1,4 @@
-/* Copyright (c) 1996-2016, OPC Foundation. All rights reserved.
+/* Copyright (c) 1996-2017, OPC Foundation. All rights reserved.
 
    The source code in this file is covered under a dual-license scenario:
      - RCL: for OPC Foundation members in good-standing
@@ -258,7 +258,7 @@ namespace Opc.Ua
         {
             if (certificateId == null) throw new ArgumentNullException("certificateId");
 
-            X509Certificate2 certificate = certificateId.Find();
+            X509Certificate2 certificate = certificateId.Find(true);
 
             if (certificate != null)
             {

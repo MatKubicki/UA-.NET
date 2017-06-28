@@ -1,4 +1,4 @@
-/* Copyright (c) 1996-2016, OPC Foundation. All rights reserved.
+/* Copyright (c) 1996-2017, OPC Foundation. All rights reserved.
 
    The source code in this file is covered under a dual-license scenario:
      - RCL: for OPC Foundation members in good-standing
@@ -284,6 +284,8 @@ namespace Opc.Ua
                 SetIdentifier(IdType.Opaque, value);
                 return;
             }
+
+            throw new ArgumentException("Identifier type not supported.", "value");
         }
         #endregion
 

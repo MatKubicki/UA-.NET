@@ -10,9 +10,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Opc.Ua.Com</RootNamespace>
     <AssemblyName>Opc.Ua.ComInterop</AssemblyName>
-    <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\Key\OPC Key Pair.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -234,7 +233,6 @@
   <ItemGroup>
     <Content Include="Common\BuildDesign.bat" />
     <Content Include="Common\ModelDesign.csv" />
-    <Content Include="Opc.Ua.Client.dll" />
     <EmbeddedResource Include="Common\Opc.Ua.Com.PredefinedNodes.uanodes" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,5 @@
 /* ========================================================================
- * Copyright (c) 2005-2016 The OPC Foundation, Inc. All rights reserved.
+ * Copyright (c) 2005-2017 The OPC Foundation, Inc. All rights reserved.
  *
  * OPC Foundation MIT License 1.00
  * 
@@ -314,8 +314,11 @@ namespace Opc.Ua.Server
 		public void Delete(OperationContext context)
         {
             // delete the diagnostics.
-            ServerSystemContext systemContext = m_server.DefaultSystemContext.Copy(m_session);
-            m_server.DiagnosticsNodeManager.DeleteSubscriptionDiagnostics(systemContext, m_diagnosticsId);
+            if (m_diagnosticsId != null && !m_diagnosticsId.IsNullNodeId)
+            {
+                ServerSystemContext systemContext = m_server.DefaultSystemContext.Copy(m_session);
+                m_server.DiagnosticsNodeManager.DeleteSubscriptionDiagnostics(systemContext, m_diagnosticsId);
+            }
 
             lock (m_lock)
             {   

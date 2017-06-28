@@ -1,5 +1,5 @@
 /* ========================================================================
- * Copyright (c) 2005-2016 The OPC Foundation, Inc. All rights reserved.
+ * Copyright (c) 2005-2017 The OPC Foundation, Inc. All rights reserved.
  *
  * OPC Foundation MIT License 1.00
  * 
@@ -396,12 +396,20 @@ namespace Quickstarts
                 throw new FormatException("The minute must be less than 60.'");
             }
 
-            double seconds = Convert.ToDouble(fields[2]);
+            var secondsWithMs = fields[2].Split('.');
+
+            double seconds = Convert.ToDouble(secondsWithMs[0]);
             timestamp = timestamp.AddSeconds(seconds);
 
             if (seconds > 60)
             {
-                throw new FormatException("The second must be less than 60.'");
+              throw new FormatException("The second must be less than 60.'");
+            }
+
+            if (secondsWithMs.Length == 2)
+            {
+              double milliseconds = Convert.ToDouble(secondsWithMs[1]);
+              timestamp.AddMilliseconds(milliseconds);
             }
 
             return timestamp;

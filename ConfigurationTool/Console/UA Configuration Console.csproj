@@ -11,8 +11,7 @@
     <RootNamespace>Opc.Ua.Configuration</RootNamespace>
     <AssemblyName>Opc.Ua.ConfigurationConsole</AssemblyName>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\..\Key\OPC Key Pair.snk</AssemblyOriginatorKeyFile>
     <StartupObject>
     </StartupObject>
     <FileUpgradeFlags>

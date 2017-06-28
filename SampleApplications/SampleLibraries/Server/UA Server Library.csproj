@@ -11,9 +11,8 @@
     <RootNamespace>Opc.Ua.Server</RootNamespace>
     <AssemblyName>Opc.Ua.Server</AssemblyName>
     <MinFrameworkVersionRequired>3.0</MinFrameworkVersionRequired>
-    <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\Key\OPC Key Pair.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>

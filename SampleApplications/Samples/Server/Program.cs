@@ -1,5 +1,5 @@
 /* ========================================================================
- * Copyright (c) 2005-2016 The OPC Foundation, Inc. All rights reserved.
+ * Copyright (c) 2005-2017 The OPC Foundation, Inc. All rights reserved.
  *
  * OPC Foundation MIT License 1.00
  * 
@@ -82,7 +82,7 @@ namespace Opc.Ua.Sample
                 // HttpAccessRule.SetHttpsCertificate(c.SecurityConfiguration.ApplicationCertificate.Find(true), 51212, false);
 
                 // check the application certificate.
-                application.CheckApplicationInstanceCertificate(false, 0);
+                application.CheckApplicationInstanceCertificate(false, 2048);
 
                 // start the server.
                 application.Start(new SampleServer());

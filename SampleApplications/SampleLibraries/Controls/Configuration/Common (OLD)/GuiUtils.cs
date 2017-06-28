@@ -1,5 +1,5 @@
 /* ========================================================================
- * Copyright (c) 2005-2016 The OPC Foundation, Inc. All rights reserved.
+ * Copyright (c) 2005-2017 The OPC Foundation, Inc. All rights reserved.
  *
  * OPC Foundation MIT License 1.00
  * 
@@ -367,7 +367,7 @@ namespace Opc.Ua.Client.Controls
             }
 
             // check the certificate.
-            X509Certificate2 certificate = CheckApplicationInstanceCertificate(configuration, 1024, interactive, true);
+            X509Certificate2 certificate = CheckApplicationInstanceCertificate(configuration, 2048, interactive, true);
 
             if (certificate == null)
             {
@@ -502,7 +502,7 @@ namespace Opc.Ua.Client.Controls
         /// </summary>
         public static X509Certificate2 CheckApplicationInstanceCertificate(ApplicationConfiguration configuration)
         {
-            return CheckApplicationInstanceCertificate(configuration, 1024, Environment.UserInteractive, true);
+            return CheckApplicationInstanceCertificate(configuration, 2048, Environment.UserInteractive, true);
         }
 
         /// <summary>
